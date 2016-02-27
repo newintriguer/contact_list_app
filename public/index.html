@@ -1,0 +1,66 @@
+<!DOCTYPE html >
+<html >
+  <head>
+    <title>Contact List App</title>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+    
+  </head>
+  <body ng-app="myApp">
+  <div  class="container" ng-controller="myCtrl">
+    <h1>Contact List App</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Number</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input placeholder="name" class="form-control" ng-model="contact.name"></td>
+          <td><input placeholder="email" class="form-control" ng-model="contact.email"></td>
+          <td><input placeholder="number" class="form-control" ng-model="contact.number"></td>
+          <td><button class="btn btn-primary" ng-click="addContact()">Add Contact</button></td>
+          <td><button class="btn btn-info" ng-click="update()">Update</button>
+          <td><button class="btn btn-info" ng-click="deselect()">Clear</button></td>
+        </tr>
+        <tr ng-repeat="contact in contactlist">
+          <td>{{contact.name}}</td>
+          <td>{{contact.email}}</td>
+          <td>{{contact.number}}</td>
+          <td><button class="btn btn-danger" ng-click="remove(contact._id)">Remove</button></td>
+          <td><button class="btn btn-warning" ng-click="edit(contact._id)">Edit</button></td>
+      </tbody>
+      
+    </table>
+    
+  </div>
+
+
+ 
+  
+
+
+
+
+
+
+
+
+
+    
+    
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/script.js"></script>
+
+       
+  </body>
+</html>
